@@ -127,6 +127,17 @@ experimental:
 #      - Shadowsocks
 #rules:
 #  - 'MATCH,DIRECT'
+prepend-proxies:
+  - name: pkuvpn
+    type: socks5
+    server: 10.25.59.91
+    port: 7890
+prepend-proxy-groups:
+    - name: PKU
+      type: select
+      proxies:
+          - pkuvpn
+          - DIRECT
 
 # Clash for Windows
 # Proxies module latency test settings
